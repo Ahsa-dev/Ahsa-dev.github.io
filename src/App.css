@@ -56,6 +56,10 @@
 .character {
   width: 16.4%;
 }
+.characters.loading {
+  display: block;
+  min-height: 1000px;
+}
 .char-name {
   margin-bottom: 10px;
   font-family: character-name;
