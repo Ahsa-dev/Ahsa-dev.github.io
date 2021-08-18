@@ -1,7 +1,7 @@
-import './App.css';
+import './styles/App.css';
 import FrontPage from './pages/FrontPage.js';
 import CharacterDetail from './pages/CharacterDetail.js'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (

@@ -1,0 +1,26 @@
+.pag {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    button {
+        font-family: character-name;
+        background-color: white;
+        border: solid 2px #ea8102;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 10px;
+        cursor: pointer;
+
+        i {
+            font-style: normal;
+            font-family: 'fontAwesome';
+        }
+
+        &.active, &:hover {
+            background-color: #ea8102;
+            color: white;
+        }
+    }
+}
+

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import api from '../data/api';
 import { CardListElement } from './CardDetail';
 import Paginator from './Paginator';
+import { charLink } from '../styles/modules/char-list.module.scss';
 
 const  CharacterList = (props) => {
 
@@ -44,7 +45,7 @@ const  CharacterList = (props) => {
                     <div className={`characters ${state.loading ? 'loading':'loaded'}`}>
                         {state.data.map(function(current,index){
                             return (
-                                <Link className="char-link" key={current.id} to={"/character/"+current.id}>
+                                <Link className={charLink} key={current.id} to={"/character/"+current.id}>
                                     <CardListElement image={current.image} name={current.name} key={current.name+'-'+index}/>
                                 </Link>
                             )

@@ -1,7 +1,10 @@
+import detail from '../styles/modules/char-detail.module.scss';
+import charList from '../styles/modules/char-list.module.scss';
+
 export const CardDetail = ({data}) => (
-    <div className="char-detail">
-        <img src={data.image} className="image"/>
-        <div className="name">{data.name}</div>
+    <div className={detail.detail}>
+        <img className={detail.image} src={data.image} alt={data.name} />
+        <div className={detail.name}>{data.name}</div>
         <div className="status">{data.status}</div>
         <div className="origin">{data.origin.name}</div>
         <div className="location">{data.location.name}</div>
@@ -10,8 +13,8 @@ export const CardDetail = ({data}) => (
 );
 
 export const CardListElement = ({ image, name }) => (
-    <div className="character">
-        <div className="char-image">
+    <div className={charList.character}>
+        <div className={charList.image}>
             <img src={image} alt={name}/>
         </div>
     </div>
