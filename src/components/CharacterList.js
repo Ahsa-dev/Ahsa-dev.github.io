@@ -9,11 +9,10 @@ const  CharacterList = (props) => {
     const apiUrl = "https://rickandmortyapi.com/api/character/?page=";
     const [state, setState] = useState({
         data: null,
-        actualPage: 1,
+        actualPage: localStorage.getItem('rickPage') ? localStorage.getItem('rickPage') : 1,
         pages: 0,
         loading: true
     });
-
     useEffect(()=> {
         getCharacters();
     },[state.actualPage]);
@@ -34,28 +33,30 @@ const  CharacterList = (props) => {
     }
 
     const changePage = (page) => {
+        localStorage.setItem('rickPage', page);
         setState({...state, actualPage: page });
     }
 
     return (
         <>
-            <div className={`characters ${state.loading ? 'loading':'loaded'}`}>
-                {state.data !==null &&
-                    state.data.map(function(current,index){
-                        console.log('char',current);
-                        return (
-                            <Link className="char-link" to={"/character/"+current.id}>
-                                <CardListElement image={current.image} name={current.name} key={current.name+'-'+index}/>
-                            </Link>
-                        )
-                    })   
-                }
-            </div>
-            <Paginator  
-                changePage={changePage} 
-                currentPage={state.actualPage}
-                totalPages={state.pages}
-            />
+            {state.data !==null &&
+                <>
+                    <div className={`characters ${state.loading ? 'loading':'loaded'}`}>
+                        {state.data.map(function(current,index){
+                            return (
+                                <Link className="char-link" key={current.id} to={"/character/"+current.id}>
+                                    <CardListElement image={current.image} name={current.name} key={current.name+'-'+index}/>
+                                </Link>
+                            )
+                        })}
+                    </div>
+                    <Paginator  
+                        changePage={changePage} 
+                        currentPage={state.actualPage}
+                        totalPages={state.pages}
+                    />
+                </>
+            }
         </>
     );
 }

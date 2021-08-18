@@ -17,7 +17,6 @@ const Character = ({id}) => {
         setState({...state, loading: true });
         try {
             const data = await api.data.getData(apiUrl+id);
-            console.log('data',data);
             setState({
                 ...state,
                 data: data,

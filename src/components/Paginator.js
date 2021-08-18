@@ -3,14 +3,13 @@ import React, {useState, useEffect} from 'react';
 const Paginator = ({ changePage, currentPage, totalPages }) => {
 
     const [state, setState] = useState({buttons: null});
-
     useEffect(()=>{
         setButtons();
     },[currentPage,totalPages]);
 
     const setButtons = () => {
-        let min = Math.floor(currentPage - 2);
-        let max = Math.floor(currentPage + 2);
+        let min = Math.floor(parseInt(currentPage) - 2);
+        let max = Math.floor(parseInt(currentPage) + 2);
         if(min <= 0){
             max += Math.abs(min)+1;
             min = 1;
