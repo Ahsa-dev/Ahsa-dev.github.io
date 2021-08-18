@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 
 const Paginator = ({ changePage, currentPage, totalPages }) => {
 
-
     const [state, setState] = useState({buttons: null});
 
     useEffect(()=>{

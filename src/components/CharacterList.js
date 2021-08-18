@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import api from '../data/api';
 import { CardListElement } from './CardDetail';
 import Paginator from './Paginator';
+
 const  CharacterList = (props) => {
 
     const apiUrl = "https://rickandmortyapi.com/api/character/?page=";

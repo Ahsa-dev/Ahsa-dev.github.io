@@ -1,5 +1,3 @@
-
-
 export const CardDetail = ({data}) => (
     <div className="char-detail">
         <img src={data.image} className="image"/>
