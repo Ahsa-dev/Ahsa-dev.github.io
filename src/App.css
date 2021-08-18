@@ -60,7 +60,7 @@
   display: block;
   min-height: 1000px;
 }
-.char-name {
+.char-name, .char-detail .name {
   margin-bottom: 10px;
   font-family: character-name;
 }
@@ -78,6 +78,11 @@
 }
 .char-link .character {
   width: 100%;
+}
+
+.char-detail {
+  margin: auto;
+  width: 50%;
 }
 .hola {
   font-size: 15px;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import api from '../data/api';
+import { CardListElement } from './CardDetail';
 import Paginator from './Paginator';
-
 const  CharacterList = (props) => {
 
     const apiUrl = "https://rickandmortyapi.com/api/character/?page=";
@@ -44,12 +44,7 @@ const  CharacterList = (props) => {
                         console.log('char',current);
                         return (
                             <Link className="char-link" to={"/character/"+current.id}>
-                                <div className="character" key={current.name+'-'+index} >
-                                    {/* <div class="char-name">{current.name}</div> */}
-                                    <div className="char-image">
-                                        <img src={current.image} alt={current.name}/>
-                                    </div>
-                                </div>
+                                <CardListElement image={current.image} name={current.name} key={current.name+'-'+index}/>
                             </Link>
                         )
                     })   

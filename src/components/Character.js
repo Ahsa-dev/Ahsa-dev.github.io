@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import api from '../data/api';
-
+import { CardDetail } from './CardDetail';
 const Character = ({id}) => {
 
     const apiUrl = "https://rickandmortyapi.com/api/character/";
@@ -29,7 +29,11 @@ const Character = ({id}) => {
     }
 
     return (
-        <div></div>
+        <>
+            {state.data !== null &&    
+                <CardDetail data={state.data}/>
+            }
+        </>
     );
 }
 
