@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import api from '../data/api';
 import Paginator from './Paginator';
 
@@ -40,13 +41,16 @@ const  CharacterList = (props) => {
             <div className={`characters ${state.loading ? 'loading':'loaded'}`}>
                 {state.data !==null &&
                     state.data.map(function(current,index){
+                        console.log('char',current);
                         return (
-                            <div className="character" key={current.name+'-'+index} >
-                                {/* <div class="char-name">{current.name}</div> */}
-                                <div className="char-image">
-                                    <img src={current.image} alt={current.name}/>
+                            <Link className="char-link" to={"/character/"+current.id}>
+                                <div className="character" key={current.name+'-'+index} >
+                                    {/* <div class="char-name">{current.name}</div> */}
+                                    <div className="char-image">
+                                        <img src={current.image} alt={current.name}/>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         )
                     })   
                 }

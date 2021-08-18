@@ -72,6 +72,13 @@
   width: inherit;
   height: auto;
 }
+.char-link:hover {
+  transform: scale(1.1);
+  /* opacity: 0.8; */
+}
+.char-link .character {
+  width: 100%;
+}
 .hola {
   font-size: 15px;
 }
