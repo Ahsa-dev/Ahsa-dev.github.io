@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import '../fonts/font-awesome/css/font-awesome.min.css';
 
 const Paginator = ({ changePage, currentPage, totalPages }) => {
 
@@ -27,13 +28,13 @@ const Paginator = ({ changePage, currentPage, totalPages }) => {
 
     return (
         <div className="paginator">
-            <button onClick={()=>changePage(1)}>&lt;&lt;</button>
+            <button onClick={()=>changePage(1)}><i class="fas fa-chevron-left"></i></button>
             {state.buttons !== null && 
                 state.buttons.map((current)=>{
                     return <button key={`paginator-button-${current.value}`} onClick={()=>changePage(current.value)}>{current.value}</button>
                 })
             }
-            <button onClick={()=>changePage(totalPages)}>&gt;&gt;</button>
+            <button onClick={()=>changePage(totalPages)}><i class="fas fa-chevron-right"></i></button>
         </div>
     );
 }

@@ -73,8 +73,8 @@
   height: auto;
 }
 .char-link:hover {
-  transform: scale(1.1);
-  /* opacity: 0.8; */
+  transform: scale(1.03);
+  transition: transform 0.5s;
 }
 .char-link .character {
   width: 100%;
@@ -83,6 +83,24 @@
 .char-detail {
   margin: auto;
   width: 50%;
+}
+.paginator {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.paginator button i {
+  font-style: normal;
+  font-family: 'fontAwesome';
+}
+.paginator button {
+  font-family: character-name;
+  background-color: white;
+  border: solid 2px #ea8102;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 10px;
 }
 .hola {
   font-size: 15px;
