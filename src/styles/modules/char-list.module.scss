@@ -1,6 +1,6 @@
 .charLink {
     width: 16.4%;
-    
+    padding: 10px;
     &:hover {
         transform: scale(1.03);
         transition: transform 0.5s;
@@ -15,6 +15,7 @@
     width: 100%;
     height: 100%;
     img {
+        border-radius: 13px;
         width: inherit;
         height: auto;
     }
