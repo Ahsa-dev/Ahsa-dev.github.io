@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Route exact path="/" render={FrontPage}/>
         <Route exact path="/character/:id" render={CharacterDetail}/>
       </Router>
