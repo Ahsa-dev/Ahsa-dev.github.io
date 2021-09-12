@@ -29,7 +29,7 @@ const Paginator = ({ currentPage, totalPages }) => {
 
     return (
         <div className={styles.pag}>
-            <Link to="/page/1"><i className="fas fa-chevron-left"></i></Link>
+            <Link to="/page/1"><i class="fas fa-angle-double-left"></i></Link>
             {state.buttons !== null && 
                 state.buttons.map((current)=>(
                     <Link to={`/page/${current.value}`}className={current.value == currentPage ? styles.active:""} key={`paginator-button-${current.value}`} >
@@ -37,7 +37,7 @@ const Paginator = ({ currentPage, totalPages }) => {
                     </Link>
                 ))
             }
-            <Link to={`/page/${totalPages}`} ><i className="fas fa-chevron-right"></i></Link>
+            <Link to={`/page/${totalPages}`} ><i class="fas fa-angle-double-right"></i></Link>
         </div>
     );
 }
