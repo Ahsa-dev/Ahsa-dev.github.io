@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/modules/paginator.module.scss';
 import '../fonts/font-awesome/css/font-awesome.min.css';
 
-const Paginator = ({ changePage, currentPage, totalPages }) => {
+const Paginator = ({ currentPage, totalPages }) => {
     const [state, setState] = useState({buttons: null});
     useEffect(()=>{
         setButtons();
@@ -28,15 +29,15 @@ const Paginator = ({ changePage, currentPage, totalPages }) => {
 
     return (
         <div className={styles.pag}>
-            <button onClick={()=>changePage(1)}><i className="fas fa-chevron-left"></i></button>
+            <Link to="/page/1"><i className="fas fa-chevron-left"></i></Link>
             {state.buttons !== null && 
                 state.buttons.map((current)=>(
-                    <button className={current.value == currentPage ? styles.active:""} key={`paginator-button-${current.value}`} onClick={()=>changePage(current.value)}>
+                    <Link to={`/page/${current.value}`}className={current.value == currentPage ? styles.active:""} key={`paginator-button-${current.value}`} >
                         {current.value}
-                    </button>
+                    </Link>
                 ))
             }
-            <button onClick={()=>changePage(totalPages)}><i className="fas fa-chevron-right"></i></button>
+            <Link to={`/page/${totalPages}`} ><i className="fas fa-chevron-right"></i></Link>
         </div>
     );
 }

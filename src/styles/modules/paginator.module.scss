@@ -2,7 +2,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
 
-    button {
+    a {
         font-family: character-name;
         background-color: white;
         border: solid 2px #ea8102;
@@ -11,6 +11,9 @@
         border-radius: 50%;
         margin: 10px;
         cursor: pointer;
+        text-decoration: none;
+        color: black;
+        padding: 5px 10px;
 
         i {
             font-style: normal;

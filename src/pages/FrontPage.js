@@ -1,8 +1,8 @@
 import CharacterList from '../components/CharacterList.js';
 
-const FrontPage = () => {
+const FrontPage = (props) => {
     return (
-        <CharacterList/>
+        <CharacterList pageId={props.match.params.id}/>
     );
 }
 

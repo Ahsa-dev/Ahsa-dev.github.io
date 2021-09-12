@@ -1,27 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import api from '../data/api';
 import { CardListElement } from './CardDetail';
 import Paginator from './Paginator';
 import { charLink } from '../styles/modules/char-list.module.scss';
 
 const  CharacterList = (props) => {
-
+    
+    let location = useLocation();
     const apiUrl = "https://rickandmortyapi.com/api/character/?page=";
     const [state, setState] = useState({
         data: null,
-        actualPage: localStorage.getItem('rickPage') ? localStorage.getItem('rickPage') : 1,
+        actualPage: props.actualPage,
         pages: 0,
         loading: true
     });
-    useEffect(()=> {
-        getCharacters();
-    },[state.actualPage]);
 
+
+
+    useEffect(()=> {
+        getCharacters();  
+    },[location]);
+    
     const getCharacters = async () => {
         setState({...state, loading: true });
         try {
-            const data = await api.data.getData(apiUrl+state.actualPage);
+            const data = await api.data.getData(apiUrl+props.pageId);
             setState({
                 ...state,
                 data: data.results,
@@ -31,11 +35,6 @@ const  CharacterList = (props) => {
         }catch(e){
             console.log('error',e);
         }
-    }
-
-    const changePage = (page) => {
-        localStorage.setItem('rickPage', page);
-        setState({...state, actualPage: page });
     }
 
     return (
@@ -52,8 +51,7 @@ const  CharacterList = (props) => {
                         })}
                     </div>
                     <Paginator  
-                        changePage={changePage} 
-                        currentPage={state.actualPage}
+                        currentPage={props.pageId}
                         totalPages={state.pages}
                     />
                 </>

@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Router basename={process.env.PUBLIC_URL}>
-        <Route exact path="/" render={FrontPage}/>
+        <Route exact path="/page/:id" render={FrontPage}/>
         <Route exact path="/character/:id" render={CharacterDetail}/>
       </Router>
     </div>
