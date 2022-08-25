@@ -1,0 +1,419 @@
+body {
+    background-color: #F09D85 ;
+    margin: 0;
+    font-family: 'Kanit-Medium';
+}
+
+body, html {
+    height: 100%;
+}
+
+.parallax {
+    background-image: url('../images/Parallax.png');
+    min-height: 1000px;
+    height: 80%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner {
+    position: relative;
+}
+
+.banner-image {
+    min-height: 500px;
+    background-image: url('../images/Banner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.3);
+}
+
+.banner-square {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    min-width: 300px;
+    padding: 30px 20px;
+    background-color: #efefef;
+    z-index: 10;
+    transform: translateY(-50%);
+    box-shadow: 0px 0px 200px #aadfe3;
+    clip-path: polygon(90% 0%, 100% 50%, 90% 100%, 0% 100%, 0% 50%, 0% 0%);
+    transition: left 1s ease-out 0s, position 1s ease-out 0s;
+}
+
+.banner-square.initial {
+    position: absolute;
+    top: 250px;
+    left: 200px;
+}
+
+.banner-text {
+    position: relative;
+}
+
+.banner-text h1 {
+    font-family: "DancingScript-Regular";
+    font-size: 35px;
+    color: black;
+    font-weight: bolder;
+    letter-spacing: 5px;
+    margin: 0px;
+}
+
+h2 {
+    font-family: "DancingScript-Regular";
+    font-size: 30px;
+    color: black;
+    font-weight: bolder;
+    letter-spacing: 5px;
+    margin: 0px;
+    text-transform: capitalize;
+    margin-bottom: 40px;
+}
+
+.main-description {
+    text-align: center;
+    background-color: #F09D85;
+    min-height: 350px;
+    margin: 100px 25% 50px;
+}
+.main-description p {
+    font-family: 'Kanit-Medium';
+    font-size: 20px;
+}
+.main-description h2 span {
+    position: relative;
+}
+
+
+.main-description h2 span::after {
+    content: "";
+    width: 35px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: -2px;
+}
+
+.main-description p span {
+    font-family: 'Kanit-Medium';
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.main-description ol span {
+    position: relative;
+}
+
+.main-description ol {
+    list-style: none;
+}
+.main-description ol li {
+    display: flex;
+    justify-content: center;
+}
+
+.main-description ol li p {
+    position: relative;
+    font-size: 16px;
+}
+
+.main-description ol li p span {
+    position: relative;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.main-description ol li p::before {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: -10px;
+}
+
+.main-description ol span::after {
+    content: "";
+    width: 66px;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    top: 55%;
+    left: -2px;
+    transform: rotate(-3deg);
+}
+
+.line {
+    position: absolute;
+    width: 15px;
+    height: 5px;
+    transform: rotate(100deg) translateY(-50%);
+    background-color: black;
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 90%);
+}
+
+.first-line {
+    bottom: -33px;
+    right: 30px;
+}
+
+.second-line {
+    bottom: -33px;
+    right: 40px;
+}
+
+.countdown-container {
+    background-color: #fcd2a4;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+    flex-wrap: wrap;
+}
+
+.countdown-container h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.countdown-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+
+}
+
+.countdown-container ul li {
+    margin: 0 30px;
+    
+}
+
+.countdown-container ul li .number {
+    background-color: #f7b36a;
+    width: 30px;
+    height: 30px;
+    color: black;
+    margin: auto;
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Kanit-Medium';
+}
+
+.countdown-container ul li .label {
+    font-family: 'Kanit-Light';
+    font-weight: bolder;
+    text-align: center;
+}
+
+.activities {
+    padding: 50px;
+}
+
+.activities > p {
+    text-align: center;
+}
+
+.activities h2 {
+    text-align: center;
+}
+
+.activities ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.activities ul li {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.activities ul li:nth-child(2n) {
+    flex-direction: row-reverse;
+}
+
+
+.activities ul li:nth-child(2n) .description {
+    border-left: solid 1px black;
+}
+.activities ul li:nth-child(2n-1) .description {
+    border-right: solid 1px black;
+}
+
+.activities .description p {
+    margin: 0;
+}
+.activities .description h3 {
+    margin: 0;
+}
+
+.activities p.hour {
+    font-family: 'Kanit-ExtraLight';
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.activities .description {
+    max-width: 200px;
+    min-width: 200px;
+    color: white;
+    font-family: 'Kanit-Light';
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.kayak .description {
+    padding-left: 35px;
+}
+
+.kayak img {
+    width: 130px;
+    height: 100%;
+    margin: auto 80px auto 25px;
+}
+
+.bonfire .description {
+    padding-right: 35px;
+}
+
+.bonfire img  {
+    width: 70px;
+    height: 100%;
+    margin: auto 115px auto 50px;
+}
+
+.arrive .description {
+    padding-left: 35px;
+}
+
+.arrive img  {
+    width: 130px;
+    height: 100%;
+    margin: auto 80px auto 25px;
+}
+
+
+.penhol .description {
+    padding-right: 35px;
+}
+
+.penhol img  {
+    width: 150px;
+    height: 100%;
+    margin: auto 45px auto 40px;
+}
+
+.mimir .description {
+    padding-right: 35px;
+}
+
+.mimir img  {
+    width: 100px;
+    height: 100%;
+    margin: auto 75px auto 60px;
+    transform: rotate(20deg);
+}
+
+.hiking .description {
+    padding-right: 35px;
+}
+
+.hiking img  {
+    width: 100px;
+    height: 100%;
+    margin: auto 75px auto 60px;
+}
+
+.peach .description {
+    padding-left: 35px;
+}
+
+.peach img  {
+    width: 100px;
+    height: 100%;
+    margin: auto 75px auto 60px;
+}
+
+.movie .description {
+    padding-left: 35px;
+}
+
+.movie img {
+    width: 80px;
+    height: 100%;
+    margin: auto 80px auto 75px;
+}
+
+
+.trip-start {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+.trip-start .trip-text {
+    margin: 50px 200px 0px 100px;
+}
+
+.trip-start .trip-image {
+    width: 100%;
+    height: auto;
+    filter: blur(0.5px);
+}
+
+footer {
+    background: #333333;
+    color: white;
+    font-size: 11px;
+    font-family: "Kanit-ExtraLight";
+    text-align: right;
+    padding: 10px 50px;
+}
+
+footer span {
+    font-family: "Kanit-ExtraLightItalic";
+}
+
+.pocket-pain {
+    display: flex;
+    text-align: center;
+    position: relative;
+}
+.pocket-pain .glamping-prices {
+    width: 50%;
+    background-color: #fcd2a4;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.pocket-pain .bus-prices {
+    width: 50%;
+    background-color: #f7b36a;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.pocket-pain .pocket-pain-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    clip-path: circle(49% at 50% 50%);
+    background: rgb(247,179,106);
+    background: linear-gradient(90deg, rgba(247,179,106,1) 0%, rgba(252,210,164,1) 100%);
+}
+
